@@ -1,0 +1,41 @@
+/* Ratanang Community Center - shared stylesheet (used by every page) */
+/* Colours: teal #28605a (headings/nav), cream #fdf6e8 (background), terracotta #be503c (buttons) */
+body { margin:0; background:#fdf6e8; color:#2b2b2b; font-family:"Segoe UI",Arial,sans-serif; font-size:16px; line-height:1.55; }
+h1 { font-family:Georgia,serif; font-size:40px; color:#28605a; margin:0 0 10px; }
+h2 { font-family:Georgia,serif; font-size:28px; color:#28605a; margin:0 0 8px; }
+h3 { font-size:19px; color:#be503c; margin:8px 0 4px; }
+p  { margin:0 0 12px; }
+a  { color:#be503c; }
+/* Header + navigation (same on every page) */
+header { background:#28605a; color:#fdf6e8; padding:14px 30px; overflow:hidden; }
+header img { float:left; width:56px; height:56px; margin-right:14px; }
+header .brand { font-family:Georgia,serif; font-size:26px; padding-top:2px; }
+header .tag { font-size:13px; opacity:.85; }
+nav { background:#1d4642; text-align:right; padding:0 30px; }
+nav a { display:inline-block; padding:12px 20px; color:#fdf6e8; text-decoration:none; font-weight:bold; }
+nav a:hover, nav a.active { background:#be503c; }
+/* Layout */
+.wrap { max-width:1000px; margin:0 auto; padding:24px 20px; overflow:hidden; }
+.hero { width:100%; height:auto; display:block; border-bottom:6px solid #be503c; }
+.purpose { background:#fff; border-left:6px solid #be503c; padding:16px 20px; margin-bottom:24px; }
+.left { float:left; width:64%; } .right { float:right; width:32%; }
+.card { display:inline-block; width:18.4%; margin:0 1% 20px 0; vertical-align:top; background:#fff; border:1px solid #e6d9c0; }
+.card img { width:100%; display:block; } .card .body { padding:8px 12px 12px; }
+.panel { background:#fff; border:1px solid #e6d9c0; padding:16px; margin-bottom:16px; }
+.stat { font-family:Georgia,serif; font-size:30px; color:#be503c; }
+/* Forms */
+label { display:block; font-weight:bold; margin:10px 0 3px; }
+input[type=text], input[type=email], input[type=number], select, textarea { width:96%; padding:8px; border:1px solid #b9a98a; font-size:15px; }
+.opt { display:inline-block; margin-right:18px; font-weight:normal; }
+.error { color:#b3261e; font-size:13px; display:block; min-height:16px; }
+button { background:#be503c; color:#fff; border:0; padding:10px 20px; font-size:15px; font-weight:bold; cursor:pointer; margin:10px 8px 0 0; }
+button.alt { background:#28605a; } button:hover { opacity:.88; }
+.preview { background:#e9f2ef; border:1px dashed #28605a; padding:10px 14px; margin-top:14px; }
+/* Tables + lists */
+table { width:100%; border-collapse:collapse; background:#fff; }
+th { background:#28605a; color:#fff; text-align:left; padding:8px; } td { padding:8px; border-bottom:1px solid #e6d9c0; }
+ul.log { padding-left:20px; }
+/* Footer (same on every page) */
+footer { background:#1d4642; color:#fdf6e8; text-align:center; padding:18px; font-size:14px; }
+footer a { color:#ffd9a0; }
+.left, .right, .panel { box-sizing:border-box; }

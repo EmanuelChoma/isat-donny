@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home - Ratanang Community Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- The header shows the center's logo and name. -->
+    <header>
+        <img src="images/logo.png" alt="Ratanang logo">
+        <div class="brand">Ratanang Community Center</div>
+        <div class="tag">Ratanang means &ldquo;let us love one another&rdquo;</div>
+    </header>
+
+    <!-- These links take visitors to the site's main pages. -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="donate.html">Donate</a>
+        <a href="projects.html">Our Programs</a>
+    </nav>
+
+    <!-- Main image at the top of the home page. -->
+    <img class="hero" src="images/hero.jpg" alt="Health and community outreach day at Ratanang Community Center">
+
+    <!-- Main page content. -->
+    <div class="wrap">
+        <div class="purpose">
+            <h1>Love one another. Grow together.</h1>
+            <p><strong>Ratanang Community Center</strong> is a non-profit, community-based organisation. We run a
+                <strong>feeding scheme</strong>, an <strong>agriculture</strong> garden, <strong>aftercare</strong> for
+                children, free <strong>counselling</strong>, and a <strong>donation</strong> programme that funds it
+                all. On this site you can <a href="donate.html">make a donation</a> and choose the programme you want to
+                support.</p>
+        </div>
+        <div class="left">
+            <h2>How your donation works</h2>
+            <p>1. Pick a programme. 2. Choose a once-off, monthly or yearly gift. 3. Receive a thank-you and, if you
+                wish, a Section 18A tax certificate.</p>
+            <p>Every rand is recorded against your donor profile, so you always know where it went.</p>
+            <button onclick="location.href='donate.html'">Donate now</button>
+        </div>
+
+        <!-- A short summary of the center's work. -->
+        <div class="right panel">
+            <h3>Our impact so far</h3>
+            <div class="stat">15 200</div>
+            meals served<br>
+            <div class="stat">65</div>
+            children in aftercare<br>
+            <div class="stat">320</div>counselling sessions
+        </div>
+
+        <div style="clear:both"></div>
+        <h2 style="margin-top:20px">Our five programmes</h2>
+
+        <!-- Each card describes one programme. -->
+        <div>
+            <div class="card">
+                <img src="images/donation.jpg" alt="Donation">
+                <div class="body">
+                    <h3>Donation</h3>Every rand supports the whole centre: food, care and repairs.
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/aftercare.jpg" alt="Aftercare">
+                <div class="body">
+                    <h3>Aftercare</h3>A safe place after school with homework help, games and a snack.
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/counselling.jpg" alt="Counselling">
+                <div class="body">
+                    <h3>Counselling</h3>Free confidential counselling for youth, families and adults.
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/agriculture.jpg" alt="Agriculture">
+                <div class="body">
+                    <h3>Agriculture</h3>Community garden that grows vegetables for the kitchen and for sale.
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/feeding.jpg" alt="Feeding Scheme">
+                <div class="body">
+                    <h3>Feeding Scheme</h3>Hot meals served to children and elders every weekday.
+                </div>
+            </div>
+        </div>
+
+        <h3>Hear our thank-you</h3>
+        <audio controls src="media/thank-you.wav">
+            Your browser does not support audio.
+        </audio>
+
+        <p>
+            <a href="projects.html">See all programmes</a> &middot;
+            <a href="https://www.gov.za" target="_blank">About NPO registration (gov.za)</a>
+        </p>
+    </div>
+
+    <!-- The footer contains contact details and the current year. -->
+    <footer>
+        &copy; <span id="yr">2026</span> Ratanang Community Center NPO &middot;
+        <a href="https://www.gov.za" target="_blank">South African Government</a> &middot;
+        <a href="mailto:info@ratanang.org.za">info@ratanang.org.za</a>
+
+        <script>
+            // Update the year automatically when the page is opened.
+            document.getElementById("yr").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>

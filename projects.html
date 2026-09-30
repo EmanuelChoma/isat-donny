@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Our Programmes - Ratanang Community Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- The header shows the center's logo and name. -->
+    <header>
+        <img src="images/logo.png" alt="Ratanang logo">
+        <div class="brand">Ratanang Community Center</div>
+        <div class="tag">Ratanang means &ldquo;let us love one another&rdquo;</div>
+    </header>
+
+    <!-- Links to the main pages. -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="donate.html">Donate</a>
+        <a href="projects.html" class="active">Our Programs</a>
+    </nav>
+
+    <!-- Main programme page content. -->
+    <div class="wrap">
+        <h1>Our programmes</h1>
+        <p>Donations are recorded against one of these programmes (the Projects table in our database).</p>
+
+        <!-- These buttons filter the programme list by category. -->
+        <button class="alt" onclick="filterProjects('all')">All</button>
+        <button class="alt" onclick="filterProjects('food')">Food</button>
+        <button class="alt" onclick="filterProjects('children')">Children &amp; Youth</button>
+        <button class="alt" onclick="filterProjects('wellbeing')">Wellbeing</button>
+        <button class="alt" onclick="filterProjects('general')">General fund</button>
+
+        <br><br>
+
+        <!-- Each table row contains information about one programme. -->
+        <table id="projTable">
+            <tr>
+                <th>Picture</th>
+                <th>Programme</th>
+                <th>Area</th>
+                <th>Unit cost</th>
+                <th>What it does</th>
+            </tr>
+            <tr data-cat="general">
+                <td>
+                    <img src="images/donation.jpg" alt="Donation" style="width:90px">
+                </td>
+                <td><strong>Donation</strong></td>
+                <td>General fund for the centre</td>
+                <td>R100 / care pack</td>
+                <td>Every rand supports the whole centre: food, care and repairs.</td>
+            </tr>
+            <tr data-cat="children">
+                <td>
+                    <img src="images/aftercare.jpg" alt="Aftercare" style="width:90px">
+                </td>
+                <td><strong>Aftercare</strong></td>
+                <td>Children &amp; Youth</td>
+                <td>R30 / afternoon</td>
+                <td>A safe place after school with homework help, games and a snack.</td>
+            </tr>
+            <tr data-cat="wellbeing">
+                <td>
+                    <img src="images/counselling.jpg" alt="Counselling" style="width:90px">
+                </td>
+                <td><strong>Counselling</strong></td>
+                <td>Wellbeing</td>
+                <td>R200 / session</td>
+                <td>Free confidential counselling for youth, families and adults.</td>
+            </tr>
+            <tr data-cat="food">
+                <td>
+                    <img src="images/agriculture.jpg" alt="Agriculture" style="width:90px">
+                </td>
+                <td><strong>Agriculture</strong></td>
+                <td>Food</td>
+                <td>R80 / seed pack</td>
+                <td>Community garden that grows vegetables for the kitchen and for sale.</td>
+            </tr>
+            <tr data-cat="food">
+                <td>
+                    <img src="images/feeding.jpg" alt="Feeding Scheme" style="width:90px">
+                </td>
+                <td><strong>Feeding Scheme</strong></td>
+                <td>Food</td>
+                <td>R25 / meal</td>
+                <td>Hot meals served to children and elders every weekday.</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:18px"><a href="donate.html"><button>Support a programme</button></a></p>
+    </div>
+
+    <!-- Contact details and the current year. -->
+    <footer>
+        &copy; <span id="yr">2026</span> Ratanang Community Center NPO &middot;
+        <a href="https://www.gov.za" target="_blank">South African Government</a> &middot;
+        <a href="mailto:info@ratanang.org.za">info@ratanang.org.za</a>
+
+        <script>
+            // Update the year automatically when the page is opened.
+            document.getElementById("yr").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <!-- Loads the code used to filter the programme list. -->
+    <script src="app.js"></script>
+</body>
+
+</html>

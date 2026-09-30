@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Donate - Ratanang Community Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- The header shows the center's logo and name. -->
+  <header>
+    <img src="images/logo.png" alt="Ratanang logo">
+    <div class="brand">Ratanang Community Center</div>
+    <div class="tag">Ratanang means &ldquo;let us love one another&rdquo;</div>
+  </header>
+
+  <!-- Links to the main pages. -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="donate.html" class="active">Donate</a>
+    <a href="projects.html">Our Programs</a>
+  </nav>
+
+  <!-- Main donation page content. -->
+  <div class="wrap">
+    <h1>Make a donation</h1>
+    <p>Business process: capturing a donor and their donation (the Donors and Donations tables of our database).</p>
+
+    <!-- Visitors enter their donation details in this form. -->
+    <div class="left panel">
+      <form id="donateForm" onsubmit="return false;">
+        <label for="name">Full name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="e.g. Thandi Mokoena"
+          onblur="document.getElementById('err-name').innerHTML = validateField(this.value,'name')">
+        <span class="error" id="err-name"></span>
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="thandi@example.com"
+          onblur="document.getElementById('err-email').innerHTML = validateField(this.value,'email')">
+        <span class="error" id="err-email"></span>
+
+        <label for="phone">Cell number</label>
+        <input
+          type="text"
+          id="phone"
+          placeholder="0821234567"
+          onblur="document.getElementById('err-phone').innerHTML = validateField(this.value,'phone')">
+        <span class="error" id="err-phone"></span>
+
+        <label for="amount">Amount (Rand)</label>
+        <input
+          type="number"
+          id="amount"
+          placeholder="100"
+          oninput="updatePreview()">
+        <span class="error" id="err-amount"></span>
+
+        <label for="project">Programme to support</label>
+        <select id="project" onchange="updatePreview()">
+          <option value="donation">Donation</option>
+          <option value="aftercare">Aftercare</option>
+          <option value="counselling">Counselling</option>
+          <option value="agriculture">Agriculture</option>
+          <option value="feeding">Feeding Scheme</option>
+        </select>
+
+        <!-- Choose how often to give and for how long. -->
+        <label>How often?</label>
+        <span class="opt">
+          <input type="radio" name="frequency" value="once" checked onclick="updatePreview()">
+          Once-off
+        </span>
+        <span class="opt">
+          <input type="radio" name="frequency" value="monthly" onclick="updatePreview()">
+          Monthly
+        </span>
+        <span class="opt">
+          <input type="radio" name="frequency" value="yearly" onclick="updatePreview()">
+          Yearly
+        </span>
+
+        <label for="years">For how many years? (recurring gifts)</label>
+        <select id="years" onchange="updatePreview()">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+        </select>
+
+        <!-- Optional settings for the donation. -->
+        <label>Options</label>
+        <span class="opt">
+          <input type="checkbox" id="anon">
+          Give anonymously
+        </span>
+        <span class="opt">
+          <input type="checkbox" id="cert">
+          Send Section 18A certificate
+        </span>
+        <span class="opt">
+          <input type="checkbox" id="news">
+          Email me updates
+        </span>
+
+        <label for="msg">Message (optional)</label>
+        <textarea id="msg" rows="3"></textarea>
+
+        <!-- Shows an estimate based on the selected donation details. -->
+        <div class="preview" id="preview">
+          Enter an amount of R10 or more to see your impact.
+        </div>
+
+        <button type="button" onclick="handleDonate()">Donate</button>
+        <button type="button" class="alt" onclick="updatePreview()">Calculate impact</button>
+        <button type="button" class="alt" onclick="resetForm()">Clear</button>
+        <p id="certnote" style="color:#28605a"></p>
+      </form>
+    </div>
+
+    <!-- Displays donations made during this visit. -->
+    <div class="right panel">
+      <h3>Donations this session</h3>
+      <div class="stat" id="raised">R0.00</div>
+      <ul class="log" id="log"></ul>
+      <audio id="jingle" src="media/thank-you.wav"></audio>
+    </div>
+  </div>
+
+  <!-- Contact details and the current year. -->
+  <footer>
+    &copy; <span id="yr">2026</span> Ratanang Community Center NPO &middot;
+    <a href="https://www.gov.za" target="_blank">South African Government</a> &middot;
+    <a href="mailto:info@ratanang.org.za">info@ratanang.org.za</a>
+
+    <script>
+      // Update the year automatically when the page is opened.
+      document.getElementById("yr").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Loads the code that validates and processes the donation form. -->
+  <script src="app.js"></script>
+</body>
+
+</html>
